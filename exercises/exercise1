@@ -1,0 +1,3 @@
+dog = Brewery.create name:"BrewDog", year:2007
+dog.beers.create name:"Punk IPA", style:"IPA"
+dog.beers.create name:"Nanny State", style:"lowalcohol"

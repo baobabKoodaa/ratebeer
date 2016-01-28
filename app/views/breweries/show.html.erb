@@ -8,11 +8,6 @@
 </p>
 
 <p>
-  <strong>Year:</strong>
-  <%= @brewery.year %>
-</p>
-
-<p>
   <strong>Bearcount:</strong>
   <%= @brewery.beers.count %>
 </p>
@@ -20,6 +15,12 @@
   <% @brewery.beers.each do |beer| %>
       <%= link_to "#{beer.name}", beer %> <br>
   <% end %>
+</p>
+
+<p>
+  <% if @brewery.ratings.count > 0 %>
+  Average rating: <%= "#{@brewery.average_rating} (#{pluralize(@brewery.ratings.count, " rating")})" %>
+      <% end %>
 </p>
 
 <%= link_to 'Edit', edit_brewery_path(@brewery) %> |
