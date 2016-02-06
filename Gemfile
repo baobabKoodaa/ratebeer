@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'bcrypt', '~> 3.1.7'
+
 group :development, :test do
   gem 'sqlite3'
   gem "better_errors"
