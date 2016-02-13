@@ -3,7 +3,8 @@ class Beer < ActiveRecord::Base
   has_many :ratings, dependent: :destroy
   has_many :rates, -> { uniq }, through: :ratings, source: :user
   include Average
-  validates :name, presence: true
+  validates :name, :presence => {:message => "must not be empty"}
+  validates :style, presence: true
 
   def getRatingCount
     ratings.count

@@ -1,5 +1,17 @@
 <h1>New Beer</h1>
 
+<% if @beer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@beer.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% @beer.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
 <%= form_for(@beer) do |f| %>
 
     <p>

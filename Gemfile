@@ -5,6 +5,13 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   gem 'sqlite3'
   gem "better_errors"
+  gem 'rspec-rails', '~> 3.0'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :production do
