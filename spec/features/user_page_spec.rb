@@ -30,9 +30,16 @@ describe "User page" do
   it "should allow deleting ratings" do
     sign_in(username:"Pekka", password:"Foobar1")
     visit user_path(user1)
-    save_and_open_page
-    array = page.find('delete').first.click
-    byebug
-
+    page.first(:link, "delete").click
+    expect(page).to have_content("20 rating for Karhu")
+    expect(page).to_not have_content("10 rating for iso 3")
   end
+
+  it "should display favorite beer and brewery" do
+    sign_in(username:"Pekka", password:"Foobar1")
+    visit user_path(user1)
+    expect(page).to have_content("Koff")
+    expect(page).to have_content("Karhu")
+  end
+
 end

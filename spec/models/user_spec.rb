@@ -31,6 +31,7 @@ RSpec.describe User, type: :model do
   describe "with a proper password" do
     let(:user){ FactoryGirl.create(:user) }
 
+    visit user_path(user1)
     it "is saved" do
       expect(user).to be_valid
       expect(User.count).to eq(1)

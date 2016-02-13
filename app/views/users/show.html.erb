@@ -8,6 +8,15 @@
 <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
 </p>
+
+<p>
+  <% if not @user.favorite_beer.nil? %>
+  Favorite beer: <%= @user.favorite_beer.name %>
+  <br>Favorite brewery: <%= @user.favorite_brewery.name %>
+      <% end %>
+</p>
+
+
 <p>
   <strong><%= @user.ratings.count %> ratings, average <%= @user.average_rating %></strong>
   </p>
