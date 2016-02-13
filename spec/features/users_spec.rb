@@ -10,7 +10,6 @@ describe "User" do
   describe "who has signed up" do
     it "can signin with right credentials" do
       sign_in(username:"Pekka", password:"Foobar1")
-      save_and_open_page
       expect(page).to have_content 'Welcome back!'
       expect(page).to have_content 'Pekka'
     end
