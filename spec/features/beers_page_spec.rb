@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "Beers page" do
   before :each do
+    FactoryGirl.create :user
+    sign_in(username:"Pekka", password:"Foobar1")
     visit beers_path
   end
 

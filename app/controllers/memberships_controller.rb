@@ -1,7 +1,5 @@
 class MembershipsController < ApplicationController
   before_action :set_membership, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate, only: [:create]
-  include Authenticate
 
   # GET /memberships
   # GET /memberships.json
