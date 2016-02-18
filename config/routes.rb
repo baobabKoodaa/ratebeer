@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   resources :ratings, only: [:index, :new, :create, :destroy]
   root 'breweries#index'
 
+  post 'places', to:'places#search'
+  resources :places, only:[:index, :show]
+
+# get 'places', to:'places#index'
+# get 'places/:id', to:'places#show'
 
   #get 'ratings', to: 'ratings#index'
   #get 'ratings/new', to:'ratings#new'

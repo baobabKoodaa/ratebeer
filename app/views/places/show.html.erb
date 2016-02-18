@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<strong>Place</strong>
+</p>
+
+<%= @placeId %>
+<%= @placeCity %>
+
+<% data = BeermappingApi.fetch_places_in(@placeCity).find{|s| s.id == @placeId} %>
+
+<p>
+<strong><%= data.name %></strong>
+</p>
+<p><%= data.street %> </p>
+<p><%= data.zip %> <%= data.city %></p>
+
+
+<% url = UrlParser.parseUrl(data.blogmap) %>
+
+<p>
+  <iframe src=<%= url %>>
+<p>Placeholder text; only shows up if the page DOESN'T render!</p>
+</iframe>
+
+
+</p>

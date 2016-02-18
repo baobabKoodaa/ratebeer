@@ -89,11 +89,14 @@ RSpec.describe User, type: :model do
       end
 
       it "is the one with highest rating if several rated" do
-        create_beers_of_specific_property_with_ratings(user,"style=", "Lager", 8, 1, 13, 4, 8, 9, 8)
-        create_beers_of_specific_property_with_ratings(user,"style=", "Bubbels", 45, 43, 42, 42, 43, 44, 45)
-        create_beers_of_specific_property_with_ratings(user,"style=", "ASDouhsd", 6, 1, 4, 5, 3)
+        lager = Style.create(name: "Lager")
+        bubbels = Style.create(name: "Bubbels")
+        paleAle = Style.create(name: "Pale Ale")
+        create_beers_of_specific_property_with_ratings(user,"style=", lager, 8, 1, 13, 4, 8, 9, 8)
+        create_beers_of_specific_property_with_ratings(user,"style=", bubbels, 45, 43, 42, 42, 43, 44, 45)
+        create_beers_of_specific_property_with_ratings(user,"style=", paleAle, 6, 1, 4, 5, 3)
 
-        expect(user.favorite_style).to eq("Bubbels")
+        expect(user.favorite_style.name).to eq("Bubbels")
       end
     end
 

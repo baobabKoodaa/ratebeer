@@ -11,7 +11,7 @@ describe "Beers page" do
   it "allows user to create a valid beer" do
     click_link "New Beer"
     fill_in('beer[name]', with:'Testikalja')
-    select('Lager', from: 'beer[style]')
+    select('Lager', from: 'beer[style_id]')
 
 
     expect{
@@ -22,7 +22,7 @@ describe "Beers page" do
   it "does not allow user to create an invalid beer #no_love_for_invalids" do
     click_link "New Beer"
     fill_in('beer[name]', with:'')
-    select('Lager', from: 'beer[style]')
+    select('Lager', from: 'beer[style_id]')
     click_button "Create Beer"
     expect(page).to have_content("must not be empty")
     expect(Beer.count).to eq(0)
