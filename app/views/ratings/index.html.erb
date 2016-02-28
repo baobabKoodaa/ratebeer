@@ -1,13 +1,8 @@
-<h2>List of <%= @ratings.size %> ratings</h2>
+<h2>Top 3 Beer Critics</h2>
+<%= render 'list2', users: find_by_sql("SELECT * FROM User JOIN Rating WHERE Rating.user_id = User.id") %>
 
-<ul>
-  <% @ratings.each do |rating| %>
-  <li> <%= rating %> by <%= link_to rating.user.username, rating.user %> </li>
-  <% end %>
-</ul>
-
-<br>
-<br>
+<h2>Last 5 ratings</h2>
+<%= render 'list', ratings: @ratings.all.order(:created_at).limit(5) %>
 
 <% if !current_user.nil? %>
 

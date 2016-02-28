@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 gem 'bcrypt', '~> 3.1.7'
 gem 'httparty'
 
+gem 'bootstrap-sass'
+group :development do
+  gem 'rails_layout'
+end
+
 group :development, :test do
   gem 'sqlite3'
   gem "better_errors"

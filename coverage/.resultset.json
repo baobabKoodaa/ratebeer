@@ -81,8 +81,8 @@
         1,
         null,
         1,
-        162,
-        106,
+        108,
+        74,
         null,
         null,
         1,
@@ -279,6 +279,15 @@
         2,
         null,
         null,
+        null,
+        null
+      ],
+      "/home/asjuvone/Documents/courses/ROR/ratebeer/app/models/style.rb": [
+        1,
+        1,
+        null,
+        1,
+        4,
         null,
         null
       ],
@@ -500,15 +509,6 @@
         0,
         0
       ],
-      "/home/asjuvone/Documents/courses/ROR/ratebeer/app/models/style.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
       "/home/asjuvone/Documents/courses/ROR/ratebeer/app/models/user.rb": [
         0,
         0,
@@ -584,6 +584,13 @@
       "/home/asjuvone/Documents/courses/ROR/ratebeer/app/models/concerns/average.rb": [
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/asjuvone/Documents/courses/ROR/ratebeer/app/controllers/styles_controller.rb": [
         0,
         0,
         0,
@@ -756,9 +763,11 @@
         0,
         0,
         0,
+        0,
+        0,
         0
       ]
     },
-    "timestamp": 1455819565
+    "timestamp": 1456401068
   }
 }

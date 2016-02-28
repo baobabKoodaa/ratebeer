@@ -27,8 +27,14 @@ FactoryGirl.define do
   factory :beer do
     name "anonymous"
     brewery
-    if (Style.count == 0) then Style.create(name: "Lager", description: "Kuvaus") end
-    style Style.first
+
+    #if (Style.count == 0) then Style.create(name: "Lager", description: "Kuvaus") end
+    style# Style.first
+  end
+
+  factory :style do
+    name "Lager"
+    description "Kuvaus"
   end
 
 end
